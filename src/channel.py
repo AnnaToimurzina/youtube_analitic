@@ -79,20 +79,6 @@ https://www.youtube.com/playlist?list=PLH-XmS0lSi_zdhYvcwUfv0N88LQRt6UZn
             duration = isodate.parse_duration(iso_8601_duration)
             print(duration)
 
-        '''
-        получить статистику видео по его id
-        получить id можно из адреса видео
-        https://www.youtube.com/watch?v=gaoc9MPZ4bw или https://youtu.be/gaoc9MPZ4bw
-        '''
-        video_id = 'gaoc9MPZ4bw'
-        video_response = youtube.videos().list(part='snippet,statistics,contentDetails,topicDetails',
-                                               id=video_id
-                                               ).execute()
-        # printj(video_response)
-        video_title: str = video_response['items'][0]['snippet']['title']
-        view_count: int = video_response['items'][0]['statistics']['viewCount']
-        like_count: int = video_response['items'][0]['statistics']['likeCount']
-        comment_count: int = video_response['items'][0]['statistics']['commentCount']
 
 
 
